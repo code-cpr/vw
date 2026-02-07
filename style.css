@@ -13,16 +13,25 @@ body {
   color: #7a1f2b;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,180,190,0.45), rgba(255,180,190,0.45)),
+    url("../assets/images/landing.JPG") center/cover no-repeat;
+  filter: blur(4px);
+  z-index: 0;
+}
+
 .container {
-  background: rgba(255,255,255,0.8);
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.85);
   padding: 40px;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-h1 {
-  margin-bottom: 10px;
 }
 
 .subtitle {
@@ -53,6 +62,26 @@ button:hover {
   background: #ff8fa3;
 }
 
+/* Valentine Reveal */
+#valentineReveal {
+  margin-top: 30px;
+  animation: fadeIn 2s ease forwards;
+}
+
+.final-text {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.valentine-btn {
+  background: linear-gradient(135deg, #ff758f, #ff4d6d);
+  color: white;
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+}
+
 /* Popup */
 .popup {
   position: fixed;
@@ -61,6 +90,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 }
 
 .popup-box {
@@ -71,25 +101,17 @@ button:hover {
   max-width: 280px;
 }
 
-.popup-box p {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
-
 .hidden {
   display: none;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: 
-    linear-gradient(
-      rgba(255, 180, 190, 0.45),
-      rgba(255, 180, 190, 0.45)
-    ),
-    url("../assets/images/landing.JPG") center/cover no-repeat;
-  filter: blur(4px);
-  z-index: -1;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
