@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seven Days of Us ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Seven Days of Us 💕</h1>
+    <p class="subtitle">One day at a time… just like love</p>
+
+    <div class="days">
+      <button onclick="openDay(2,7,'days/rose.html')">🌹 Rose Day</button>
+      <button onclick="openDay(2,8,'days/propose.html')">💍 Propose Day</button>
+      <button onclick="openDay(2,9,'days/chocolate.html')">🍫 Chocolate Day</button>
+      <button onclick="openDay(2,10,'days/teddy.html')">🧸 Teddy Day</button>
+      <button onclick="openDay(2,11,'days/promise.html')">🤞 Promise Day</button>
+      <button onclick="openDay(2,12,'days/hug.html')">🤗 Hug Day</button>
+      <button onclick="openDay(2,13,'days/kiss.html')">💋 Kiss Day</button>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-box">
+      <p id="popupText"></p>
+      <button onclick="closePopup()">Okay 💖</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

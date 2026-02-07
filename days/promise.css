@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #7a1f2b;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,180,190,0.45), rgba(255,180,190,0.45)),
+    url("../assets/images/5.jpeg") center/cover no-repeat;
+  filter: blur(4px);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -40px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-110vh); }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 230, 235, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+.overlay button {
+  background: #ff8fa3;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #6b2c3a;
+}
+.overlay.hidden {
+  display: none;
+}
+

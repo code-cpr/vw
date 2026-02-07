@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffe4e9, #fff5f7);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #7a1f2b;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* Floating roses */
+.roses span {
+  position: absolute;
+  bottom: -50px;
+  font-size: 24px;
+  animation: floatUp linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* Music overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 228, 233, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.overlay button {
+  background: #ff8fa3;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #7a1f2b;
+  cursor: pointer;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    linear-gradient(
+      rgba(255, 180, 190, 0.45),
+      rgba(255, 180, 190, 0.45)
+    ),
+    url("../assets/images/1.JPG") center/cover no-repeat;
+  filter: blur(4px);
+  z-index: -1;
+}

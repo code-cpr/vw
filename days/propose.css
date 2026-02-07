@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #fff0f3, #ffe5ec);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #7a1f2b;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 2.1rem;
+}
+
+.line, .final {
+  opacity: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 6px 0;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.delay1 { animation-delay: 1s; }
+.delay2 { animation-delay: 2s; }
+.delay3 { animation-delay: 3s; }
+.delay4 { animation-delay: 4.2s; }
+
+.final {
+  margin-top: 20px;
+  font-size: 1.15rem;
+}
+
+/* Ring animation */
+.ring {
+  position: absolute;
+  bottom: 40px;
+  font-size: 32px;
+  opacity: 0;
+  animation: ringGlow 2s ease forwards;
+  animation-delay: 5.5s;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ringGlow {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Music overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 240, 243, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.overlay button {
+  background: #ff8fa3;
+  border: none;
+  padding: 15px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #7a1f2b;
+  cursor: pointer;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    linear-gradient(
+      rgba(255, 180, 190, 0.45),
+      rgba(255, 180, 190, 0.45)
+    ),
+    url("../assets/images/2.JPG") center/cover no-repeat;
+  filter: blur(4px);
+  z-index: -1;
+}
