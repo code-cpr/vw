@@ -29,3 +29,17 @@ function showPopup(text) {
 function closePopup() {
   document.getElementById("popup").classList.add("hidden");
 }
+
+// Valentine reveal logic
+const today = new Date();
+const isValentine =
+  today.getMonth() === 1 && today.getDate() === 14; // Feb = 1
+
+if (isValentine) {
+  document.getElementById("valentineReveal").classList.remove("hidden");
+}
+
+// Valentine redirect
+function goValentine() {
+  window.location.href = "days/valentine.html";
+}
